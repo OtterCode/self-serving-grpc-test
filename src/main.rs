@@ -46,6 +46,7 @@ fn main() {
 
     // gRPC Client ===============================================================================
 
+
     let client_cert: Result<Vec<u8>, _> = File::open("./certificate.der")
         .expect("Client cert file not found")
         .bytes()
@@ -67,7 +68,6 @@ fn main() {
     let grpc_client = grpc::Client::new_expl(&addr, "localhost", tls_option, client_conf).unwrap();
     let client = SaverClient::with_client(grpc_client);
 
-    //
     static EXIT: &str = ":exit";
     loop {
 
