@@ -1,0 +1,20 @@
+[package]
+name = "micro"
+version = "0.1.0"
+authors = ["Emmett Raymond <emmettaraymond@gmail.com>"]
+build = "build.rs"
+
+[dependencies]
+grpc             = "~0.5"
+protobuf         = "~2"
+futures          = "~0.1"
+futures-cpupool  = "~0.1"
+tls-api = "0.1.*"
+tls-api-native-tls = "*"
+httpbis = "~0.7"
+foundationdb = "*"
+time = "*"
+
+
+[build-dependencies]
+protoc-rust-grpc = "~0.5"

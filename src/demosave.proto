@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package demosave;
+
+service Saver {
+  // Sends a greeting
+  rpc SaveValue (SaveRequest) returns (SaveReply) {}
+  rpc ListValues (ListRequest) returns (ValueList) {}
+}
+
+message SaveRequest {
+  string value = 1;
+}
+
+message SaveReply {
+  enum Result {
+    ERROR = 0;
+    OK = 1;
+  }
+  Result result = 1;
+}
+
+message ListRequest {
+
+}
+
+message ValueList {
+  repeated string values = 1;
+}
